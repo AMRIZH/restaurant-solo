@@ -18,6 +18,13 @@ interface OpeningHour {
   closing_time: string;
 }
 
+interface Hour {
+  id: number;
+  day: string;
+  opening_time: string;
+  closing_time: string;
+}
+
 const Home = () => {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [openingHours, setOpeningHours] = useState<OpeningHour[]>([]);
@@ -44,7 +51,7 @@ const Home = () => {
         );
         const data = await response.json();
         // Format the time to remove seconds (HH:MM)
-        const formattedData = data.map((hour: any) => ({
+        const formattedData = data.map((hour: Hour) => ({
           ...hour,
           opening_time: hour.opening_time.slice(0, 5), // Remove seconds
           closing_time: hour.closing_time.slice(0, 5), // Remove seconds
