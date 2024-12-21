@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import "../styles/global.css";
+import "../global.css";
 import Image from "next/image";
 
 interface Profile {
