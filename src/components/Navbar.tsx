@@ -1,5 +1,4 @@
 // src/components/Navbar.tsx
-
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,6 +10,7 @@ interface Profile {
 
 const Navbar = () => {
   const [profile, setProfile] = useState<Profile | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle menu visibility
 
   useEffect(() => {
     // Fetch profile data from the API
@@ -32,34 +32,66 @@ const Navbar = () => {
 
   return (
     <nav className="bg-blue-600 p-4">
-      <div className="flex items-center justify-between max-w-7xl mx-auto">
+      <div className="flex items-center justify-between max-w-7xl mx-auto relative">
         {/* Logo and Name */}
         <div className="flex items-center space-x-4">
           <Image
             src={profile.logo}
             alt="Logo"
-            width={40} // Set width to 40
-            height={40} // Set height to 40
-            className="mx-auto" // Optional: Tailwind class to center the image
+            width={40}
+            height={40}
+            className="mx-auto"
           />
           <h1 className="text-white text-xl">{profile.name}</h1>
         </div>
 
-        {/* Navigation Links (Right-Aligned) */}
-        <div className="space-x-6">
-          <Link href="/" className="text-white hover:text-gray-200">
+        {/* Hamburger Menu Button (Mobile) */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="block lg:hidden text-white focus:outline-none"
+        >
+          {/* Hamburger Icon */}
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+
+        {/* Navigation Links */}
+        <div
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } lg:flex lg:space-x-6 absolute lg:static top-full left-0 w-full lg:w-auto bg-blue-600 lg:bg-transparent p-4 lg:p-0`}
+        >
+          <Link href="/" className="block text-white hover:text-gray-200">
             Home
           </Link>
-          <Link href="/menus" className="text-white hover:text-gray-200">
+          <Link href="/menus" className="block text-white hover:text-gray-200">
             Menu
           </Link>
-          <Link href="/FAQ" className="text-white hover:text-gray-200">
+          <Link href="/FAQ" className="block text-white hover:text-gray-200">
             FAQ
           </Link>
-          <Link href="/ContactUs" className="text-white hover:text-gray-200">
+          <Link
+            href="/ContactUs"
+            className="block text-white hover:text-gray-200"
+          >
             Contact Us
           </Link>
-          <Link href="/Testimonials" className="text-white hover:text-gray-200">
+          <Link
+            href="/Testimonials"
+            className="block text-white hover:text-gray-200"
+          >
             Testimonials
           </Link>
         </div>
