@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import Image from "next/image";
 
 interface Menu {
   id: number;
@@ -54,10 +55,12 @@ const MenuDetails: React.FC = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
           <div className="flex flex-col md:flex-row items-start gap-8">
-            <img
+            <Image
               src={menu.image}
               alt={menu.name}
-              className="w-48 h-48 object-cover rounded-lg mb-6 md:mb-0"
+              width={192}
+              height={192}
+              className="object-cover rounded-lg mb-6 md:mb-0"
             />
             <div className="flex flex-col flex-grow">
               <h1 className="text-4xl font-bold text-gray-800 mb-2">

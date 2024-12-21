@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Image from "next/image";
 
 type Testimonial = {
   id: number;
@@ -200,10 +201,12 @@ const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
             />
             {imagePreview && (
               <div className="mt-2">
-                <img
+                <Image
                   src={imagePreview}
                   alt="Preview"
-                  className="w-32 h-32 object-cover rounded-full"
+                  width={128} // specify width
+                  height={128} // specify height
+                  className="object-cover rounded-full"
                 />
               </div>
             )}
@@ -225,10 +228,12 @@ const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
             >
               <div className="flex items-center space-x-4">
                 {testimonial.image && (
-                  <img
+                  <Image
                     src={`https://yoloverse.pythonanywhere.com${testimonial.image}`}
                     alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover"
+                    width={64} // Set appropriate width
+                    height={64} // Set appropriate height
+                    className="rounded-full object-cover"
                   />
                 )}
                 <div>

@@ -1,6 +1,7 @@
 // src/pages/index.tsx
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -69,7 +70,13 @@ const Home = () => {
           <div className="max-w-7xl mx-auto">
             {/* Profile Information */}
             <div className="text-center">
-              <img src={profile.logo} alt="Logo" className="h-40 mx-auto" />
+              <Image
+                src={profile.logo}
+                alt="Logo"
+                width={160}
+                height={160}
+                className="mx-auto"
+              />
               <h1 className="text-4xl font-bold text-gray-800 mt-4">
                 {profile.name}
               </h1>

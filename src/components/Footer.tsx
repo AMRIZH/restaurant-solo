@@ -1,7 +1,7 @@
 // src/components/Footer.tsx
 
 import { useEffect, useState } from "react";
-
+import Image from "next/image";
 interface Profile {
   logo: string;
   address: string;
@@ -38,7 +38,13 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Logo */}
         <div className="text-center mb-6">
-          <img src={profile.logo} alt="Logo" className="h-20 mx-auto" />
+          <Image
+            src={profile.logo}
+            alt="Logo"
+            width={80} // Set a specific width (adjust as needed)
+            height={80} // Set a specific height (adjust as needed)
+            className="mx-auto" // Tailwind class for centering
+          />
         </div>
 
         {/* Contact Information */}

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Image from "next/image";
 
 interface Menu {
   id: number;
@@ -100,9 +101,11 @@ const Menus: React.FC = () => {
               key={menu.id}
               className="bg-white shadow-md rounded-lg overflow-hidden"
             >
-              <img
+              <Image
                 src={menu.image}
                 alt={menu.name}
+                width={500}
+                height={224}
                 className="w-full h-56 object-cover"
               />
               <div className="p-4">

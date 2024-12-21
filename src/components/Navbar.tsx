@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import "../styles/global.css";
+import Image from "next/image";
+
 interface Profile {
   logo: string;
   name: string;
@@ -34,7 +36,13 @@ const Navbar = () => {
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo and Name */}
         <div className="flex items-center space-x-4">
-          <img src={profile.logo} alt="Logo" width={40} height={40} />
+          <Image
+            src={profile.logo}
+            alt="Logo"
+            width={40} // Set width to 40
+            height={40} // Set height to 40
+            className="mx-auto" // Optional: Tailwind class to center the image
+          />
           <h1 className="text-white text-xl">{profile.name}</h1>
         </div>
 
