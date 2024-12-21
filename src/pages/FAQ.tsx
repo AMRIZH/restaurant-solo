@@ -1,3 +1,5 @@
+// src/pages/FAQ.tsx
+
 import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";

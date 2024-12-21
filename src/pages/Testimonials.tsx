@@ -1,3 +1,5 @@
+// src\pages\Testimonials.tsx
+
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -51,7 +53,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
       );
 
       if (res.ok) {
-        const newTestimonial = await res.json();
         alert("Testimonial submitted successfully!");
         // Optionally update the local state or refetch data here
       } else {

@@ -34,7 +34,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo and Name */}
         <div className="flex items-center space-x-4">
-          <img src={profile.logo} alt="Logo" className="h-10" />
+          <img src={profile.logo} alt="Logo" width={40} height={40} />
           <h1 className="text-white text-xl">{profile.name}</h1>
         </div>
 

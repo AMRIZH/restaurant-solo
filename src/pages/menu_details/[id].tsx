@@ -1,3 +1,5 @@
+// src\pages\menu_details\[id].tsx
+
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Footer from "../../components/Footer";

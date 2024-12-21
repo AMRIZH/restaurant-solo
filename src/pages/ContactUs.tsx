@@ -1,4 +1,4 @@
-// pages/contact-us.tsx
+// pages/ContactUs.tsx
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
