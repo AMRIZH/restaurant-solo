@@ -35,13 +35,15 @@ const Navbar = () => {
       <div className="flex items-center justify-between max-w-7xl mx-auto relative">
         {/* Logo and Name */}
         <div className="flex items-center space-x-4">
-          <Image
-            src={profile.logo}
-            alt="Logo"
-            width={40}
-            height={40}
-            className="mx-auto"
-          />
+          <Link href="/" passHref>
+            <Image
+              src={profile.logo}
+              alt="Logo"
+              width={40}
+              height={40}
+              className="cursor-pointer"
+            />
+          </Link>
           <h1 className="text-white text-xl">{profile.name}</h1>
         </div>
 
